@@ -21,7 +21,7 @@ function Main(props) {
         .catch((err) => {
           console.log(`Ошибка: ${err}`);
         });
-    })
+    }, [])
 
     React.useEffect(() => {
         api
@@ -32,7 +32,7 @@ function Main(props) {
           .catch((err) => {
             console.log(`Ошибка: ${err}`);
           });
-    })
+    }, [])
 
     return (
         <main className="content">

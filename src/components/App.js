@@ -52,6 +52,7 @@ function closeAllPopups() {
         <PopupWithForm
             name="edit"
             title="Редактировать профиль"
+            buttonText="Сохранить"
             isOpen={isEditProfilePopupOpen}
             onClose={closeAllPopups}
             children={
@@ -60,13 +61,14 @@ function closeAllPopups() {
                     <span className="popup__input-error" id="name-input-error"></span>
                     <input className="popup__input popup__input_type_description" id="description-input" placeholder="Введите информацию о себе" name="subtitle" type="text" minLength="2" maxLength="200" required />
                     <span className="popup__input-error" id="description-input-error"></span>
-                    <button className="popup__save" id="profile-btn" type="submit">Сохранить</button>
+                    
                 </>
             }
         />
         <PopupWithForm
             name="add"
             title="Новое место"
+            buttonText="Создать"
             isOpen={isAddPlacePopupOpen}
             onClose={closeAllPopups}
             children={
@@ -75,38 +77,26 @@ function closeAllPopups() {
                     <span className="popup__input-error" id="cardname-input-error"></span>
                     <input className="popup__input popup__input_type_cardlink" id="link-input" placeholder="Ссылка на изображение" name="subtitle" type="url" required />
                     <span className="popup__input-error" id="link-input-error"></span>
-                    <button className="popup__save" id="card-btn" type="submit">Создать</button>
+                    
                 </>
             }
         />
         <PopupWithForm
             name="avatar-edit"
             title="Обновить аватар"
+            buttonText="Сохранить"
             isOpen={isEditAvatarPopupOpen}
             onClose={closeAllPopups}
             children={
                 <>
                     <input className="popup__input popup__input_type_cardlink" id="avatar-input" placeholder="Ссылка на изображение" name="subtitle" type="url" required />
                     <span className="popup__input-error" id="avatar-input-error"></span>
-                    <button className="popup__save" id="card_avater-btn" type="submit">Сохранить</button>
+                    
                 </>
             }
         />
-        <ImagePopup card={selectedCard} onClose={closeAllPopups}/>
-        
-        
-        
-        
-        <div className="popup popup_confirm-delete">
-            <div className="popup__container popup__overlay">
-              <form className="popup__form" name="popupForm" noValidate>
-                <h2 className="popup__title">Вы уверены?</h2>
-                <button type="submit" className="popup__save">Да</button>
-              </form>
-              <button type="button" className="popup__close"></button>
-            </div>
+            <ImagePopup card={selectedCard} onClose={closeAllPopups}/>
         </div>
-    </div>
     </div>
   );
 }
