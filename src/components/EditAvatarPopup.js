@@ -10,7 +10,7 @@ const EditAvatarPopup = ({ isOpen, onClose, onUpdateAvatar }) => {
         onUpdateAvatar({
           subtitle: avatarRef.current.value,
         });
-      } 
+    } 
 
     return (
         <PopupWithForm

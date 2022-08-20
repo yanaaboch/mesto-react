@@ -24,7 +24,7 @@ const [currentUser, setCurrentUser] = React.useState({
     avatar: "",
     _id: "",
     cohort: "",
-  });
+});
 const [cards, setCards] = React.useState([]);
 
 React.useEffect(() => {
@@ -36,7 +36,7 @@ React.useEffect(() => {
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
       });
-  }, []);
+}, []);
 
 React.useEffect(() => {
     api
@@ -47,7 +47,7 @@ React.useEffect(() => {
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
       });
-  }, []);
+}, []);
 
 function handleCardLike(card) {
     // Снова проверяем, есть ли уже лайк на этой карточке
@@ -90,7 +90,7 @@ function handleEditAvatarPopupOpen() {
 
 const handleCardClick = card => {
     setSelectedCard(card);
-  };
+};
 
 const handleUpdateUser = (newUserInfo) => {
     api.setUserInfo(newUserInfo)
@@ -112,7 +112,7 @@ const handleUpdateAvatar = (data) => {
     .catch((err) => {
       console.log(`Ошибка: ${err}`);
     });
-  };
+};
 
 const handleAddPlaceSubmit = (newData) => {
     api.addCard(newData)

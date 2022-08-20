@@ -1,9 +1,14 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import PopupWithForm from "./PopupWithForm";
 
 const AddPlacePopup = ({ isOpen, onClose, onAddPlace }) => {
     const [image, setImage] = useState('');
     const [description, setDescription] = useState('');
+
+    React.useEffect(() => {
+        setDescription('');
+        setImage('');
+      }, [isOpen]);
 
     const handleImageChange = (event) => {
         setImage(event.target.value)
@@ -31,9 +36,9 @@ const AddPlacePopup = ({ isOpen, onClose, onAddPlace }) => {
                 onClose={onClose}
                 onSubmit={handleSubmit}>
                   
-                          <input className="popup__input popup__input_type_cardname" id="cardname-input" placeholder="Название места" name="title" type="text" minLength="2" maxLength="30"  onChange={handleDescriptionChange} required />
+                          <input className="popup__input popup__input_type_cardname" id="cardname-input" placeholder="Название места" name="title" type="text" minLength="2" maxLength="30"  onChange={handleDescriptionChange} value={description ? description : ''} required />
                           <span className="popup__input-error" id="cardname-input-error"></span>
-                          <input className="popup__input popup__input_type_cardlink" id="link-input" placeholder="Ссылка на изображение" name="subtitle" type="url" onChange={handleImageChange} required />
+                          <input className="popup__input popup__input_type_cardlink" id="link-input" placeholder="Ссылка на изображение" name="subtitle" type="url" onChange={handleImageChange} value={image ? image : ''} required />
                           <span className="popup__input-error" id="link-input-error"></span>
                           
             

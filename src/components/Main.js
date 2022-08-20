@@ -7,17 +7,12 @@ import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 function Main(props) {
 
-    //const [userName, setUserName] = React.useState('');
-    //const [userDescription, setUserDescription] = React.useState('');
-    //const [userAvatar, setUserAvatar] = React.useState('');
-    
-    const currentUser = React.useContext(CurrentUserContext);
-    const {name, about, avatar} = React.useContext(CurrentUserContext);
+  const {name, about, avatar} = React.useContext(CurrentUserContext);
 
 
     
 
-    return (
+  return (
         <main className="content">
             <section className="profile">
                 <button className="profile__avatar-edit" onClick={props.onEditAvatar}>
@@ -45,7 +40,7 @@ function Main(props) {
                 
             </section>
         </main>
-)
+  )
 }
     
 
